@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style2.css" />
+    <script defer="" src="losowanie2.js"></script>
+    <title>Losowanie Modlitwy</title>
+  </head>
+  <body>
+    <div class="container container__left">
+      <div class="formularz">
+        <h2>Formularz</h2>
+        <form id="createProfile">
+          <label for="imie">Imię:</label>
+          <input type="text" id="imie" name="imie" /><br /><br />
+          <label for="nazwisko">Nazwisko:</label>
+          <input type="text" id="nazwisko" name="nazwisko" /><br /><br />
+          <label for="bio">Bio:</label>
+          <textarea id="bio" name="bio"></textarea><br /><br />
+          <label for="inne">Inne:</label>
+          <input type="text" id="inne" name="inne" /><br /><br />
+          <input type="submit" value="Dodaj" />
+        </form>
+      </div>
+      <div class="profile">
+        <h2>Profil urzytkownika</h2>
+        <article class="user">
+          <img class="card__img" src="./Default_pfp.svg.png" />
+          <div class="card__data">
+            <h3 class="card__firstname">Imię</h3>
+            <h4 class="card__lastname">Nazwisko</h4>
+            <p class="card__bio"><span>Bio:</span>„”</p>
+            <p class="card__row"><span>👉</span></p>
+            <p class="card__row"><span>👉</span></p>
+            <p class="card__row"><span>👉</span></p>
+          </div>
+        </article>
+        <div id="displayElement"></div>
+        <button class="btn-draw">Losuj!</button>
+      </div>
+    </div>
+    <div class="container container__right">
+      <div class="people" style="opacity: 1">
+        <!-- <article id="aniela" class="person person--active">
+          <img
+            class="card__img"
+            src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/384392205_340980441709688_8423688966748580357_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=a2f6c7&amp;_nc_ohc=NFV7FEDqc6cAX-r2VDl&amp;_nc_ht=scontent-waw1-1.xx&amp;oh=00_AfAHWR1RfjTXk3ES3VQ93sRDku4esQ_G1tQsyW_aRekdjw&amp;oe=6524C1C2"
+          />
+          <div class="card__data">
+            <h3 class="card__firstname">Aniela</h3>
+            <h4 class="card__lastname">Sikorska</h4>
+            <p class="card__bio"><span>Bio:</span>„Kocham ludzi”</p>
+            <p class="card__row"><span>👉</span>bierzmowanie</p>
+            <p class="card__row"><span>👉</span>muzyczna</p>
+            <p class="card__row"><span>👉</span>rodzina</p>
+          </div>
+        </article>
+        <article id="zosia" class="person person--disabled">
+          <img
+            class="card__img"
+            src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/336890888_682764930268476_7125231579479195224_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=a2f6c7&amp;_nc_ohc=xQnDjIwpMdgAX8SjfQH&amp;_nc_ht=scontent-waw1-1.xx&amp;oh=00_AfAY0X5xExTD82LkW3StiBEm_ZoBmxFZKhu4uUfXLN1qwQ&amp;oe=6524BE41"
+          />
+          <div class="card__data">
+            <h3 class="card__firstname">Zosia</h3>
+            <h4 class="card__lastname">Radwańska</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article>
+        <article id="ania" class="person">
+          <img
+            class="card__img"
+            src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/344730539_569316518618908_7780118470231361556_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=a2f6c7&amp;_nc_ohc=9bTO5P7pTUMAX_U_y88&amp;_nc_ht=scontent-waw1-1.xx&amp;oh=00_AfDWn2lJaJ7fRoSOc1dihSW7Xwp91ERF07pm9i54LjxAzw&amp;oe=6524F5FC"
+          />
+          <div class="card__data">
+            <h3 class="card__firstname">Ania</h3>
+            <h4 class="card__lastname">Michalik</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article>
+        <article id="antek" class="person">
+          <img
+            class="card__img"
+            src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/296189300_413016097468461_8292321695997211337_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=a2f6c7&amp;_nc_ohc=DFbGAqZGZ_EAX84mXCJ&amp;_nc_ht=scontent-waw1-1.xx&amp;oh=00_AfDkISl3S1RTSWkYSPBS16f9TTnYs0c5p2m4p7Zzhj_5mQ&amp;oe=6524F0CC"
+          />
+          <div class="card__data">
+            <h3 class="card__firstname">Antek</h3>
+            <h4 class="card__lastname">Kurdziel</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article>
+        <article id="bogusz" class="person">
+          <img class="card__img" src="./Default_pfp.svg.png" />
+          <div class="card__data">
+            <h3 class="card__firstname">Bogusz</h3>
+            <h4 class="card__lastname">Boliński</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article>
+        <article id="emilka" class="person">
+          <img class="card__img" src="./Default_pfp.svg.png" />
+          <div class="card__data">
+            <h3 class="card__firstname">Emilka</h3>
+            <h4 class="card__lastname">Siuda</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article>
+        <article id="kuba" class="person">
+          <img class="card__img" src="./Default_pfp.svg.png" />
+          <div class="card__data">
+            <h3 class="card__firstname">Kuba</h3>
+            <h4 class="card__lastname">Kuta</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article>
+        <article id="julian" class="person">
+          <img class="card__img" src="./Default_pfp.svg.png" />
+          <div class="card__data">
+            <h3 class="card__firstname">Julian</h3>
+            <h4 class="card__lastname">Masłowski</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article>
+        <article id="kasia" class="person">
+          <img class="card__img" src="./Default_pfp.svg.png" />
+          <div class="card__data">
+            <h3 class="card__firstname">Kasia</h3>
+            <h4 class="card__lastname">Kitzberger</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article>
+        <article id="przemek" class="person">
+          <img class="card__img" src="./Default_pfp.svg.png" />
+          <div class="card__data">
+            <h3 class="card__firstname">Przemek</h3>
+            <h4 class="card__lastname">Ciepiał</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article>
+        <article id="lukasz" class="person">
+          <img class="card__img" src="./Default_pfp.svg.png" />
+          <div class="card__data">
+            <h3 class="card__firstname">Łukasz</h3>
+            <h4 class="card__lastname">Marszałek</h4>
+            <p class="card__bio"><span>Bio:</span>„undefined”</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+            <p class="card__row"><span>👉</span>undefined</p>
+          </div>
+        </article> -->
+      </div>
+
+      <!-- <div class="images"></div> -->
+    </div>
+  </body>
+</html>

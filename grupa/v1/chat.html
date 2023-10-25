@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formularz i Lista</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
+      .left {
+        flex: 1;
+        padding: 20px;
+      }
+      .right {
+        flex: 1;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <h2>Formularz</h2>
+        <form id="myForm">
+          <label for="imie">Imię:</label>
+          <input type="text" id="imie" name="imie" /><br /><br />
+          <label for="nazwisko">Nazwisko:</label>
+          <input type="text" id="nazwisko" name="nazwisko" /><br /><br />
+          <label for="bio">Bio:</label>
+          <textarea id="bio" name="bio"></textarea><br /><br />
+          <label for="inne">Inne:</label>
+          <input type="text" id="inne" name="inne" /><br /><br />
+          <input type="submit" value="Dodaj" />
+        </form>
+      </div>
+      <div class="right">
+        <h2>Element utworzony na podstawie danych</h2>
+        <div id="displayElement"></div>
+      </div>
+    </div>
+    <h2>Lista wszystkich elementów</h2>
+    <ul id="elementList"></ul>
+
+    <script>
+      document
+        .getElementById('myForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          // Pobierz wartości z formularza
+          var imie = document.getElementById('imie').value;
+          var nazwisko = document.getElementById('nazwisko').value;
+          var bio = document.getElementById('bio').value;
+          var inne = document.getElementById('inne').value;
+
+          // Utwórz element na podstawie danych
+          var element = document.createElement('li');
+          element.innerHTML =
+            '<strong>Imię:</strong> ' +
+            imie +
+            '<br><strong>Nazwisko:</strong> ' +
+            nazwisko +
+            '<br><strong>Bio:</strong> ' +
+            bio +
+            '<br><strong>Inne:</strong> ' +
+            inne;
+
+          // Dodaj element do listy
+          document.getElementById('elementList').appendChild(element);
+
+          // Wyświetl element po prawej stronie
+          document.getElementById('displayElement').innerHTML =
+            element.innerHTML;
+
+          // Wyczyść formularz
+          document.getElementById('myForm').reset();
+        });
+    </script>
+  </body>
+</html>
