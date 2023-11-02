@@ -23,15 +23,16 @@ osoby.forEach((el) => {
   const [imie, nazwisko] = el.split(" ");
   const osoba = new Person(imie, nazwisko);
   Osoby.push(osoba);
-  console.log(osoba);
+  // console.log(osoba);
 });
 
 const gr1 = new Lottery(Osoby);
-console.log(gr1);
+// console.log(gr1);
 
 const btn = document.querySelector(".btn-draw");
+// console.log(btn);
 
 btn?.addEventListener("click", () => {
   gr1.doLottery();
-  console.log(gr1.results);
+  gr1.printResults();
 });
