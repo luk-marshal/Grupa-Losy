@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  display: flex;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  color: #636e72;
+  background-color: #ffffe9;
+  /* color: #f3f5f6;
+  background-color: #212b30; */
+
+  /* margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: 1vw;
+  margin-right: 1vw; */
+
+  min-height: 100vh;
+  min-width: 98vw;
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 25%;
+  }
+  body {
+    margin-top: 0;
+    /* margin-bottom: 0; */
+    margin-left: 0;
+    margin-right: 0;
+  }
+  header {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 401px) and (max-width: 850px) {
+  html {
+    font-size: 45%;
+  }
+  body {
+    margin-top: 1vh;
+    /* margin-bottom: 1vh; */
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+  header {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 851px) {
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    margin-top: 1vh;
+    /* margin-bottom: 1vh; */
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+  header {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+header {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+
+  text-align: center;
+
+  display: grid;
+
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.title {
+  font-size: 4rem;
+}
+
+nav {
+  /* height: 65%; */
+  height: 100%;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+
+  font-size: 3rem;
+}
+.btn-draw {
+  border: none;
+  border-radius: 0.7rem;
+  color: #f3f5f6;
+  background-color: #708e9c;
+  cursor: pointer;
+  /* height: 3rem; */
+  font-size: 3rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+}
+
+aside {
+  display: flex;
+  margin-right: 5rem;
+  width: 10%;
+}
+
+main {
+  min-height: 300px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.result {
+  font-size: 3rem;
+  text-align: center;
+
+  transition: opacity 1s;
+
+  background-color: #bacbd3;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+
+  display: block;
+  width: 80rem;
+  /* height: 8rem; */
+  padding: 1rem 1.5rem;
+  border-radius: 1.7rem;
+  margin-bottom: 0.5rem;
+  /* border: 1px solid rgba(0, 0, 0, 0.7); */
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  text-align: center;
+}

@@ -24,6 +24,14 @@ export class Lottery extends PeopleGroup {
     this.results = [];
   }
 
+  private renderResult(result: string, style: string = "") {
+    this.resultsContainer?.insertAdjacentHTML(
+      "afterbegin",
+      `<article class="result" style="${style}">${result}</article>
+        `
+    );
+  }
+
   private handleBet(player: PlayerType, result: PlayerType) {
     const note = `${player?.firstName} ${player?.lastName} wylosował(a): ${result?.firstName} ${result?.lastName}`;
 
@@ -33,12 +41,7 @@ export class Lottery extends PeopleGroup {
       result: result,
       note: note,
     });
-    // debugger;
-    this.resultsContainer?.insertAdjacentHTML(
-      "beforeend",
-      `<p class="result">${note}</p>
-        `
-    );
+    this.renderResult(note);
   }
 
   drawOne(player: PlayerType) {
@@ -55,7 +58,6 @@ export class Lottery extends PeopleGroup {
     // }
 
     this.handleBet(player, result);
-
     return result;
   }
 
@@ -72,8 +74,15 @@ export class Lottery extends PeopleGroup {
       //Logic if last player bet himself
       if (i + 1 === this.people.length && player === result) {
         console.warn("Last player bets himself!");
+        this.renderResult(
+          "Ostatni gracz wylosował siebie",
+          "background-color: #f591ac"
+        );
+
         return;
       }
     });
+
+    this.renderResult("-------Koniec Losowania-------");
   }
 }
