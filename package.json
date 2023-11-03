@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build"
+  },
+  "source": {
+    "./dist/*": "./src/$1"
+  },
+  "compilerOptions": {
+    "baseUrl": "./src"
   },
   "repository": {
     "type": "git",

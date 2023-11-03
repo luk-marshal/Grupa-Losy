@@ -1,7 +1,7 @@
-import { Person } from "./src/Person";
-import { PeopleGroup } from "./src/PeopleGroup";
-import { Lottery } from "./src/Lottery";
-import { PlayerType, PeopleType, ResultType } from "./src/config";
+import { Person } from "./Person";
+import { PeopleGroup } from "./PeopleGroup";
+import { Lottery } from "./Lottery";
+import { PlayerType, PeopleType, ResultType } from "./config";
 
 const osoby = [
   "Aniela Sikorska",
