@@ -1,5 +1,29 @@
 {
+  "name": "grupa-losy",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "source": {
+    "./dist/*": "./src/$1"
+  },
+  "compilerOptions": {
+    "baseUrl": "./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luk-marshal/Grupa-Losy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luk-marshal/Grupa-Losy/issues"
+  },
+  "homepage": "https://github.com/luk-marshal/Grupa-Losy#readme",
+  "description": "",
   "dependencies": {
+    "parcel": "^2.10.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
